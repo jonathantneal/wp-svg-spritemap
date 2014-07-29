@@ -1,0 +1,12 @@
+{
+	"boss": true,
+	"curly": true,
+	"devel": true,
+	"eqeqeq": true,
+	"newcap": true,
+	"predef": ["angular"],
+	"strict": false,
+	"sub": true,
+	"trailing": true,
+	"validthis": true
+}

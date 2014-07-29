@@ -1,0 +1,84 @@
+.svg-list {
+	font-size: 0;
+	margin: 0 -.5rem;
+}
+
+.svg-listitem {
+	display: inline-block;
+	font-size: 1rem;
+	vertical-align: top;
+	width: 10rem;
+	min-width: 20%;
+}
+
+.svg-count-label {
+	color: #000;
+	cursor: default;
+	font-weight: 700;
+}
+
+.svg-count {
+	color: #999;
+	cursor: default;
+	font-weight: 400;
+}
+
+.svg-checkbox {
+	clip: rect(0 0 0 0);
+	position: absolute;
+}
+
+.svg-checkbox ~ .svg-details {
+	background-color: #DEDEDE;
+	border: 1px solid #DEDEDE;
+	cursor: pointer;
+	display: block;
+	margin: .5rem;
+	transition: background-color .1s ease-in-out;
+	position: relative;
+}
+
+.svg-image {
+	margin: 1em;
+	max-height: 5rem;
+	max-width: calc(100% - 2em);
+}
+
+.svg-name {
+	background-color: rgba(255,255,255,.65);
+	color: #000;
+	display: block;
+	padding: 0.5em 1em;
+	text-decoration: none;
+	transition: background-color .1s ease-in-out;
+	white-space: nowrap;
+}
+
+.svg-checkbox:checked ~ .svg-details {
+	background-color: #FFF;
+}
+
+.svg-checkbox:checked ~ .svg-details .svg-name {
+	background-color: #2F2F2F;
+	color: #FFF;
+}
+
+.svg-panel {
+	background-color: #F5F5F5;
+	border: 1px solid #E5E5E5;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.svg-panelitem {
+	line-height: 1.75rem;
+	margin: .5rem;
+}
+
+.svg-panel .svg-url {
+	cursor: pointer;
+	max-width: 100%;
+}
+
+.svg-panel .svg-submit {
+	margin-left: .5rem;
+}
