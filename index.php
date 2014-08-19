@@ -34,6 +34,5 @@ include 'inc/svgmap_upload_mimes.inc';
 
 add_action('admin_head', 'svgmap_admin_head');
 add_action('admin_menu', 'svgmap_admin_menu');
-add_action('pre_post_update','svgmap_pre_post_update');
 
 add_filter('upload_mimes', 'svgmap_upload_mimes');
