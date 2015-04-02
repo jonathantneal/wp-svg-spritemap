@@ -2,11 +2,11 @@
 Plugin Name: SVG Spritemap Manager
 Plugin URI: http://github.com/jonathantneal/wp-svg-store
 Description: Easily create and manage your SVG spritemap in Wordpress
-Version: 0.1
+Version: 0.2
 Author: Jonathan Neal
 Author URI: http://jonathantneal.com
 Min WP Version: 2.0
-Max WP Version: 3.9
+Max WP Version: 4.1
 License: Public Domain - https://creativecommons.org/publicdomain/zero/1.0/
 */
 
