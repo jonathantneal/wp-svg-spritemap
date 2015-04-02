@@ -48,6 +48,8 @@ Internet Explorer requires special assistance to display external SVGs. To resol
 
 == Changelog ==
 
+= 0.3 =
+* Added shortcode settings
 = 0.2 =
 * Added [svgmap] shortcode
 = 0.1 =

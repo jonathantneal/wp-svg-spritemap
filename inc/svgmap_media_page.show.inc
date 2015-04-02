@@ -32,12 +32,20 @@
 			<p class="svg-panelitem">
 				<span>Estimated filesize: <strong class="svg-filesize">Unknown</strong></span>
 
-        <?php wp_nonce_field('svgmap_submit'); ?>
+				<?php wp_nonce_field('svgmap_submit'); ?>
 				<button class="svg-submit button button-primary" type="submit">Update <?php print $svgmap->name; ?></button>
 			</p>
 		</div>
 	</form>
 </div>
+
+<form action="options.php" method="post">
+<?php
+	settings_fields( $svgmap->id );
+	do_settings_sections( $svgmap->id );
+	submit_button();
+?>
+</form>
 
 <style><?php include $svgmap->path.'/style.css'; ?></style>
 <script><?php include $svgmap->path.'/script.js'; ?></script>

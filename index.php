@@ -2,7 +2,7 @@
 Plugin Name: SVG Spritemap Manager
 Plugin URI: http://github.com/jonathantneal/wp-svg-store
 Description: Easily create and manage your SVG spritemap in Wordpress
-Version: 0.2
+Version: 0.3
 Author: Jonathan Neal
 Author URI: http://jonathantneal.com
 Min WP Version: 2.0
@@ -18,14 +18,21 @@ $svgmap = (object) array(
 	'path' => dirname(__FILE__),
 	'permissions' => 'upload_files',
 	'name' => 'SVG Spritemap',
-	'id'   => 'svgmap',
+	'id'   => 'svgmap'
 );
-
 $svgmap->svg_path = $svgmap->path.'/defs.svg';
 $svgmap->ids_path = $svgmap->path.'/defs.json';
 
 $svgmap->svg_url = plugins_url('defs.svg', __FILE__);
 $svgmap->ids_url = plugins_url('defs.json', __FILE__);
+
+$svgmap->settings = get_option( $svgmap->id );
+add_action( 'admin_init', 'svgmap_init' );
+function svgmap_init() {
+	global $svgmap;
+	register_setting( $svgmap->id, $svgmap->id );
+}
+add_option($svgmap->id, array('add_default_classes'=>1));
 
 include 'inc/svgmap_admin_head.inc';
 include 'inc/svgmap_admin_menu.inc';
