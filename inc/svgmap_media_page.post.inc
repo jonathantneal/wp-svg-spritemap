@@ -2,7 +2,7 @@
 
 if ( wp_verify_nonce($_REQUEST['_wpnonce'], 'svgmap_submit') ) {
 
-	$svg_string = '<svg xmlns="http://www.w3.org/2000/svg">';
+	$svg_string = '<svg xmlns="http://www.w3.org/2000/svg">' . PHP_EOL;
 	$id_array = array();
 
 	foreach ($_POST as $id => $name) {
@@ -19,19 +19,19 @@ if ( wp_verify_nonce($_REQUEST['_wpnonce'], 'svgmap_submit') ) {
 
           $viewbox = $svg->attributes()->viewBox;
 
-					$svg_string .= PHP_EOL . '<symbol id=":'.$name.'" viewBox="' . $viewbox . '">';
+					$svg_string .= '<symbol id=":'.$name.'" viewBox="' . $viewbox . '">';
 
 					foreach ($svg->children() as $child) {
 						$svg_string .= preg_replace('/(\t|\n)+/',' ',$child->asXML());
 					}
 
-					$svg_string .= '</symbol>';
+					$svg_string .= '</symbol>' . PHP_EOL;
 				}
 			}
 		}
 	}
 
-	$svg_string .= PHP_EOL . '</svg>';
+	$svg_string .= '</svg>';
 
 	file_put_contents($svgmap->svg_path, $svg_string);
 	file_put_contents($svgmap->ids_path, json_encode($id_array));
