@@ -3,7 +3,7 @@ Contributors: jonathantneal
 Donate link: http://jonathantneal.com/
 Tags: images, map, media, sprite, spritemap, svg
 Requires at least: 3.0.1
-Tested up to: 3.9
+Tested up to: 4.1
 Stable tag: "trunk"
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,6 +30,10 @@ A text field displays the URL to the SVG spritemap. Individuals sprites may be r
 
 	<svg><use xlink:href="http://dev.wordpress/wp-content/plugins/svg-spritemap/defs.svg#:accounts"></svg>
 
+Simplify including icons within Wordpress by using the `[svgmap]` shortcode in the editors. Set the required `sprite` attribute and an `<svg>` tag will be inserted in your page/post with the desired SVG image. All other shortcode parameters will be added to the inserted `<svg>` as attributes, allowing you to set `class`, `fill`, `width`, `height` and more.
+
+  [svgmap sprite="accounts" width="100" height="100" fill="#F00" class="icon"]
+
 = How accurate is the estimated filesize? =
 
 The live, estimated filesize of the spritemap represents the combined filesize of all the individual SVGs, but it does not factor in additional gzip compression. More than likely, the estimation will be conservative and the filesize will actually be smaller than the estimation.
@@ -44,6 +48,10 @@ Internet Explorer requires special assistance to display external SVGs. To resol
 
 == Changelog ==
 
+= 0.3 =
+* Added shortcode settings
+= 0.2 =
+* Added [svgmap] shortcode
 = 0.1 =
 * Initial release.
 
