@@ -41,6 +41,7 @@
 .svg-image {
 	margin: 1em;
 	max-height: 5rem;
+	max-width: 100%;
 	max-width: calc(100% - 2em);
 }
 
@@ -48,10 +49,20 @@
 	background-color: rgba(255,255,255,.65);
 	color: #000;
 	display: block;
-	padding: 0.5em 1em;
+	padding: 0.5em;
+	font-size: 0.9em;
 	text-decoration: none;
 	transition: background-color .1s ease-in-out;
 	white-space: nowrap;
+	overflow: hidden;
+}
+
+.svg-name .button.button-small {
+  font-size: 0.8em;
+  padding: 0.2em 0.2em;
+  height: auto;
+  line-height: 1;
+  float: right;
 }
 
 .svg-checkbox:checked ~ .svg-details {
