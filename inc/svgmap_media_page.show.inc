@@ -10,14 +10,26 @@
 
 	<form class="svg-list" method="post">
 		<?php
+
+		$names = array();
+
 		foreach ($wp_query_posts as $post) {
 			$checked = in_array($post->ID, $id_array) ? ' checked' : '';
+			$name = sanitize_title($post->post_title);
+
+			if ( isset($names[$name]) ):
+				$names[$name]++;
+				$name = $name . '-' . $names[$name];
+			else:
+				$names[$name] = 1;
+			endif;
+
 		?>
 		<label class="svg-listitem">
-			<input class="svg-checkbox" type="checkbox" name="<?php print $post->ID; ?>" value="<?php print $post->post_name; ?>"<?php print $checked; ?> data-size="<?php print $post->size; ?>">
+			<input class="svg-checkbox" type="checkbox" name="<?php print $post->ID; ?>" value="<?php print $name; ?>"<?php print $checked; ?> data-size="<?php print $post->size; ?>">
 			<span class="svg-details">
 				<img class="svg-image" src="<?php print $post->guid; ?>">
-				<span class="svg-name"><?php print $post->post_name; ?></span>
+				<span class="svg-name"><?php print $name; ?></span>
 			</span>
 		</label>
 		<?php } ?>
