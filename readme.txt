@@ -48,6 +48,8 @@ Internet Explorer requires special assistance to display external SVGs. To resol
 
 == Changelog ==
 
+= 0.4 =
+* Uses sanitized post_title instead of post_name for sprite references to allow for easy editing
 = 0.3 =
 * Added shortcode settings
 = 0.2 =
