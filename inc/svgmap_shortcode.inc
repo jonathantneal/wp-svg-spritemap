@@ -34,7 +34,7 @@ function svgmap_shortcode($args) {
 			$attr .= ' ' . $key . '="' . esc_attr($value) . '"';
 		}
 
-		return '<svg' . $attr . '><use xlink:href="' . esc_url($svgmap->svg_url . '#:'. $sprite) . '"></svg>';
+		return '<svg xmlns="http://www.w3.org/2000/svg"' . $attr . '><use xlink:href="' . esc_url($svgmap->svg_url . '#:'. $sprite) . '"></use></svg>';
 	} else {
 		return false;
 	}

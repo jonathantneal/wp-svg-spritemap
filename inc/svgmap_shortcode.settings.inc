@@ -29,8 +29,10 @@ function svgmap_shortcode_init() {
 	);
 }
 
-function svgmap_settings_shortcode_description() { ?>
-	<p>SVG Sprites can be embedded in posts and pages using the <code>[svgmap sprite="&hellip;"]</code> shortcode. The <code>sprite</code> attribute is required to tell the shortcode which SVG to include. Additional attributes on the shortcode are passed to the inserted <code>&lt;svg&gt;</code> element, allowing you to set the <code>width</code>, <code>height</code>, <code>fill</code> and other attributes.</p>
+function svgmap_settings_shortcode_description() {
+	global $svgmap;
+?>
+	<p>SVG Sprites can be embedded in posts and pages using the <code>[<?php echo $svgmap->id; ?> sprite="&hellip;"]</code> shortcode. The <code>sprite</code> attribute is required to tell the shortcode which SVG to include. Additional attributes on the shortcode are passed to the inserted <code>&lt;svg&gt;</code> element, allowing you to set the <code>width</code>, <code>height</code>, <code>fill</code> and other attributes.</p>
 <?php
 }
 
