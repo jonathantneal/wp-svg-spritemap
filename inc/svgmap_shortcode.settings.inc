@@ -36,7 +36,7 @@ function svgmap_settings_shortcode_description() { ?>
 
 function svgmap_settings_shortcode_attributes() {
 	global $svgmap; ?>
-	<code>&lt;svg </code><input type="text" id='svgmap[default_attributes]' name='svgmap[default_attributes]' placeholder='width="100" height="100" class="icon" fill="#000"...' value="<?php echo esc_attr($svgmap->settings['default_attributes']); ?>" style="width: 25em; max-width: 100%;"/><code>&gt;&lt;use xlink:href="&hellip;" /&gt;&lt;/svg&gt;</code>
+	<code>&lt;svg </code><input type="text" id='svgmap[default_attributes]' name='svgmap[default_attributes]' placeholder='width="100" height="100" class="icon" fill="#000"...' value="<?php echo isset($svgmap->settings['default_attributes'])?esc_attr($svgmap->settings['default_attributes']):''; ?>" style="width: 25em; max-width: 100%;"/><code>&gt;&lt;use xlink:href="&hellip;" /&gt;&lt;/svg&gt;</code>
 	<p class="description">Attributes given to all shortcode SVGs. These may be overridden by shortcode attributes.</p>
 	<?php
 }
